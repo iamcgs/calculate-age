@@ -5,7 +5,12 @@
       <div class="input-container">
         <div class="input-date">
           <label>Fecha Inicial (nacimiento): </label><br />
-          <input class="input" type="date" v-model="firstDate" />
+          <input
+            class="input"
+            type="date"
+            v-model="firstDate"
+            :max="new Date().toISOString().split('T')[0]"
+          />
         </div>
         <div class="input-date">
           <label>Segunda Fecha: </label><br />
