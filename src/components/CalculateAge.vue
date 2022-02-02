@@ -9,7 +9,12 @@
         </div>
         <div class="input-date">
           <label>Segunda Fecha: </label><br />
-          <input class="input" type="date" v-model="secondDate" />
+          <input
+            class="input"
+            type="date"
+            v-model="secondDate"
+            :max="new Date().toISOString().split('T')[0]"
+          />
         </div>
       </div>
       <div class="result-container">

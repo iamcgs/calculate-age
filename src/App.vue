@@ -11,7 +11,10 @@
       </p>
     </div>
     <footer>
-      <p>Desarrollado por <a href="https://github.com/iamcgs">CGS</a></p>
+      <p>
+        Desarrollado por
+        <a href="https://github.com/iamcgs" target="_blank">CGS</a>
+      </p>
     </footer>
   </div>
 </template>
