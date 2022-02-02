@@ -5,12 +5,7 @@
       <div class="input-container">
         <div class="input-date">
           <label>Fecha Inicial (nacimiento): </label><br />
-          <input
-            class="input"
-            type="date"
-            v-model="firstDate"
-            :max="new Date().toISOString().split('T')[0]"
-          />
+          <input class="input" type="date" v-model="firstDate" :max="maxDate" />
         </div>
         <div class="input-date">
           <label>Segunda Fecha: </label><br />
@@ -18,7 +13,7 @@
             class="input"
             type="date"
             v-model="secondDate"
-            :max="new Date().toISOString().split('T')[0]"
+            :max="maxDate"
           />
         </div>
       </div>
@@ -47,6 +42,7 @@ export default {
       secondDate: '',
       errorMsg:
         'La segunda fecha no puede ser de un año anterior a la Fecha de Nacimiento. Por favor, revisá las fechas ingresadas y volvé a intentarlo.',
+      maxDate: new Date().toISOString().split('T')[0],
     };
   },
 
@@ -72,7 +68,7 @@ export default {
         (monthDifference === 0 && secondDateDay < firstDateDay)
       ) {
         ageDifference = ageDifference - 1;
-        console.log(ageDifference);
+        // console.log(ageDifference);
       }
       return ageDifference;
     },
